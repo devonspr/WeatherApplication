@@ -3,23 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
+    <title>Weather App - Premium</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div id="weather-container">
-        <h2>Weather App</h2>
-        <input type="text" id="city" placeholder="Enter city">
-        <button onclick="getWeather()">Search</button>
-
-        <img id="weather-icon" alt="Weather Icon">
-
-        <div id="temp-div"></div>
-
-        <div id="weather-info"></div>
-
-        <div id="hourly-forecast"></div>
+    <!-- Background Animation Elements -->
+    <div class="bg-animation">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="meteor"></div>
+        <div class="meteor"></div>
+        <div class="meteor"></div>
     </div>
-    <!-- <script src="./script.js"></script> -->
+
+    <div id="weather-container">
+        <div class="app-header">
+            <h1>🌙 OhayooOneSann</h1>
+            <div class="theme-toggle">
+                <span class="toggle-icon">☀️</span>
+            </div>
+        </div>
+        
+        <div class="search-container">
+            <input type="text" id="city" placeholder="🔍 Masukan Nama Kota">
+            <button onclick="getWeather()" class="search-btn">
+                <span class="btn-text">Cari</span>
+                <span class="btn-icon">⚡</span>
+            </button>
+        </div>
+
+        <div class="weather-display">
+            <img id="weather-icon" alt="Weather Icon" class="weather-icon">
+            
+            <div id="temp-div" class="temperature">
+                <p>--°C</p>
+            </div>
+
+            <div id="weather-info" class="weather-info">
+                <p class="city-name">Informasi</p>
+                <p class="weather-desc">Nama Kota</p>
+            </div>
+
+            <div class="weather-stats">
+                <div class="stat-item">
+                    <span class="stat-icon">💧</span>
+                    <span class="stat-value">--%</span>
+                    <span class="stat-label">Lembab</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-icon">💨</span>
+                    <span class="stat-value">-- m/s</span>
+                    <span class="stat-label">Angin</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-icon">🌡️</span>
+                    <span class="stat-value">--°C</span>
+                    <span class="stat-label">Terasa Seperti</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hourly-section">
+            <h3 id="hourly-heading">24-Jam Cast</h3>
+            <div id="hourly-forecast" class="hourly-forecast"></div>
+        </div>
+    </div>
+
+    <!-- Modal Update -->
+    <div id="update-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="header-decoration">
+                    <div class="decoration-circle circle-1"></div>
+                    <div class="decoration-circle circle-2"></div>
+                    <div class="decoration-circle circle-3"></div>
+                </div>
+                <h2><span class="accent-text">⚡</span> Update Terbaru <span class="accent-text">⚡</span></h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="update-version">
+                    <span class="version-badge">v.gadaversi</span>
+                    <span class="update-date">15 Oktober 2023</span>
+                </div>
+                
+                <div class="feature-highlight">
+                    <div class="feature-icon">🌙</div>
+                    <div class="feature-text">
+                        <h3>Tema Gelap</h3>
+                        <p>Pengalaman visual yang lebih elegan dengan tema hitam & emas</p>
+                    </div>
+                </div>
+                
+                <div class="update-features">
+                    <h3>Fitur Baru Mendatang :</h3>
+                    <ul>
+                        <li><span class="feature-icon-small">🌡️</span> Prediksi cuaca 20 Hari Kedepan</li>
+                        <li><span class="feature-icon-small">📍</span> Deteksi lokasi otomatis</li>
+                        <li><span class="feature-icon-small">📊</span> Penambahan Lokasi</li>
+                        <li><span class="feature-icon-small">🎨</span> Tema gelap/terang otomatis</li>
+                        <li><span class="feature-icon-small">🔔</span> Gatau Cape</li>
+                    </ul>
+                </div>
+                
+                <div class="update-notes">
+                    <h3>Peningkatan:</h3>
+                    <ul>
+                        <li><span class="improvement-icon">⚡</span> Peningkatan akurasi prediksi hingga 95%</li>
+                        <li><span class="improvement-icon">🚀</span> Antarmuka yang lebih responsif</li>
+                        <li><span class="improvement-icon">💎</span> Waktu loading yang lebih cepat</li>
+                    </ul>
+                </div>
+                
+                <div class="update-actions">
+                    <button id="dont-show-again" class="btn-secondary">
+                        <span class="btn-icon">🔕</span> Jangan Tampilkan Lagi
+                    </button>
+                    <button id="got-it" class="btn-primary">
+                        <span class="btn-icon">👑</span> Ngerti
+                    </button>
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <p>OhayooOneSann</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
 </body>
 </html>
